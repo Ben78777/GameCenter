@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.gamecenter.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_applicationFragment"
+            app:destination="@id/applicationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.gamecenter.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/applicationFragment"
+        android:name="com.example.gamecenter.ApplicationFragment"
+        android:label="fragment_application"
+        tools:layout="@layout/fragment_application" >
+        <action
+            android:id="@+id/action_applicationFragment_to_gameDetailFragment"
+            app:destination="@id/gameDetailFragment" />
+        <action
+            android:id="@+id/action_applicationFragment_to_favoriteGamesFragment"
+            app:destination="@id/favoriteGamesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetailFragment"
+        android:name="com.example.gamecenter.GameDetailFragment"
+        android:label="GameDetailFragment"
+        tools:layout="@layout/fragment_game_detail">
+
+        <action
+            android:id="@+id/action_gameDetailFragment_to_applicationFragment"
+            app:destination="@id/applicationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteGamesFragment"
+        android:name="com.example.gamecenter.FavoriteGamesFragment"
+        android:label="fragment_favorite_games"
+        tools:layout="@layout/fragment_favorite_games" >
+        <action
+            android:id="@+id/action_favoriteGamesFragment_to_applicationFragment"
+            app:destination="@id/applicationFragment" />
+        <action
+            android:id="@+id/action_favoriteGamesFragment_to_gameDetailFragment"
+            app:destination="@id/gameDetailFragment" />
+    </fragment>
+</navigation>
